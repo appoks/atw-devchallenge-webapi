@@ -5,9 +5,13 @@ class RepositoriesController < ApplicationController
   before_action :set_repository, only: [:show, :update]
 
   PER_PAGE = 5
+  PAGE = 1
 
   # GET /repositories
   def index
+
+    page = PAGE
+    page = params[:page].to_i unless ( params[:page].to_i < 1 || params[:page] == nil )
 
     if Repository.count < 25
       @languages = Language.all
