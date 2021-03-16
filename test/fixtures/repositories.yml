@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  owner_name: MyString
+  owner_avatar: MyString
+  description: MyString
+  creation_date: MyString
+  last_activity_date: MyString
+  homepage: MyString
+  language: one
+  forks: 
+  issues: 
+  watchers: 
+  stars: 
+  score: 1.5
+  repo_url: MyString
+  github_id: 
+
+two:
+  name: MyString
+  owner_name: MyString
+  owner_avatar: MyString
+  description: MyString
+  creation_date: MyString
+  last_activity_date: MyString
+  homepage: MyString
+  language: two
+  forks: 
+  issues: 
+  watchers: 
+  stars: 
+  score: 1.5
+  repo_url: MyString
+  github_id: 
