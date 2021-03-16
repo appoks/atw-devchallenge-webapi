@@ -13,6 +13,8 @@ class RepositoriesController < ApplicationController
     page = PAGE
     page = params[:page].to_i unless ( params[:page].to_i < 1 || params[:page] == nil )
 
+    ## eu provavelmente deveria ter mapeado para um modelo diretamente...
+
     if Repository.count < 25
       @languages = Language.all
       @languages.each do |lang|
@@ -26,7 +28,17 @@ class RepositoriesController < ApplicationController
             owner_name: repo['owner']['login'],
             owner_avatar: repo['owner']['avatar_url'],
             description: repo['description'],
-            language: Language.where(code: lang.code).first
+            language: Language.where(code: lang.code).first,
+            creation_date: repo['created_at'],
+            last_activity_date: repo['pushed_at'],
+            homepage: repo['homepage'],
+            forks: repo['forks'],
+            issues: repo['open_issues'],
+            watchers: repo['watchers'],
+            stars: repo['watchers'],
+            score: repo['score'],
+            repo_url: repo['html_url'],
+            github_id: repo['id']
           )
         end
       end
